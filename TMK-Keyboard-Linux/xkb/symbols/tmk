@@ -20,8 +20,8 @@ xkb_symbols "basic" {
     key <AE08> { [ 8, U1098 ] };
     key <AE09> { [ 9, U1099 ] };
     key <AE10> { [ 0, U1090 ] };
-    key <AE11> { [ minus, underscore ] };
-    key <AE12> { [ equal, plus ] };
+    key <AE11> { [ minus, parenleft ] };
+    key <AE12> { [ plus, parenright ] };
 
     key <AD01> { [ U1078, UAA61 ] };
     key <AD02> { [ U1010, U107B ] };
@@ -53,7 +53,7 @@ xkb_symbols "basic" {
     key <AC09> { [ U1030, U102D ] };
 
     key <AC10> { [ U1088, U1038 ] };
-    key <AC11> { [ UA9E6, U109F ] };
+    key <AC11> { [ U201D, U109F ] };
 
     key <AB01> { [ U107D, U107E ] };
     key <AB02> { [ U1011, UAA6A ] };
@@ -66,5 +66,5 @@ xkb_symbols "basic" {
     key <AB09> { [ period, U104B ] };
     key <AB10> { [ slash, question ] };
 
-    key <TLDE> { [ grave, asciitilde ] };
+    key <TLDE> { [ U1079, UA9E4 ] };
 };
