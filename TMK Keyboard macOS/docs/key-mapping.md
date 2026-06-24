@@ -1,8 +1,8 @@
-# TMK Keyboard Key Mapping
+# TMK Keyboard macOS Key Mapping
 
-This document is the source-of-truth mapping for `TMK Keyboard.klc`.
+This document is the source-of-truth mapping for `TMK Keyboard.bundle`.
 
-## Layer 1 - Normal
+## Normal
 
 | Key | Output | Unicode |
 | --- | --- | --- |
@@ -26,6 +26,9 @@ This document is the source-of-truth mapping for `TMK Keyboard.klc`.
 | `I` | `င` | `U+1004` |
 | `O` | `ဝ` | `U+101D` |
 | `P` | `ႁ` | `U+1081` |
+| `[` | `ꧡ` | `U+A9E1` |
+| `]` | `ꩦ` | `U+AA66` |
+| `\` | `ꩧ` | `U+AA67` |
 | `A` | `ေ` | `U+1031` |
 | `S` | `ႄ` | `U+1084` |
 | `D` | `ိ` | `U+102D` |
@@ -36,6 +39,7 @@ This document is the source-of-truth mapping for `TMK Keyboard.klc`.
 | `K` | `ု` | `U+102F` |
 | `L` | `ူ` | `U+1030` |
 | `;` | `ႈ` | `U+1088` |
+| `'` | `ꧦ` | `U+A9E6` |
 | `Z` | `ၽ` | `U+107D` |
 | `X` | `ထ` | `U+1011` |
 | `C` | `ၶ` | `U+1076` |
@@ -43,17 +47,11 @@ This document is the source-of-truth mapping for `TMK Keyboard.klc`.
 | `B` | `ယ` | `U+101A` |
 | `N` | `ၺ` | `U+107A` |
 | `M` | `ၢ` | `U+1062` |
-| `,` | `။` | `U+104B` |
-| `.` | `၊` | `U+104A` |
-| `/` | `?` | `U+003F` |
-| `` ` `` | `` ` `` | `U+0060` |
-| `-` | `-` | `U+002D` |
-| `=` | `=` | `U+003D` |
-| `[` | `(` | `U+0028` |
-| `]` | `)` | `U+0029` |
-| `\` | `/` | `U+002F` |
+| `,` | `,` | `U+002C` |
+| `.` | `.` | `U+002E` |
+| `/` | `/` | `U+002F` |
 
-## Layer 2 - Shift
+## Shift
 
 | Key | Output | Unicode |
 | --- | --- | --- |
@@ -76,17 +74,21 @@ This document is the source-of-truth mapping for `TMK Keyboard.klc`.
 | `U` | `ၷ` | `U+1077` |
 | `I` | `ရ` | `U+101B` |
 | `O` | `သ` | `U+101E` |
-| `P` | `႟` | `U+109F` |
+| `P` | `ႀ` | `U+1080` |
+| `[` | `ꧢ` | `U+A9E2` |
+| `]` | `ꩨ` | `U+AA68` |
+| `\` | `ꩩ` | `U+AA69` |
 | `A` | `ဵ` | `U+1035` |
 | `S` | `ႅ` | `U+1085` |
 | `D` | `ီ` | `U+102E` |
 | `F` | `ႂ်` | `U+1082 U+103A` |
 | `G` | `ႂ` | `U+1082` |
-| `H` | `့` | `U+1037` |
+| `H` | `ံ` | `U+1036` |
 | `J` | `ႆ` | `U+1086` |
-| `K` | `ꧥ` | `U+A9E5` |
-| `L` | `ꧦ` | `U+A9E6` |
+| `K` | `ို` | `U+102D U+102F` |
+| `L` | `ိူ` | `U+102D U+1030` |
 | `;` | `း` | `U+1038` |
+| `'` | `႟` | `U+109F` |
 | `Z` | `ၾ` | `U+107E` |
 | `X` | `ꩪ` | `U+AA6A` |
 | `C` | `ꧠ` | `U+A9E0` |
@@ -94,35 +96,6 @@ This document is the source-of-truth mapping for `TMK Keyboard.klc`.
 | `B` | `ျ` | `U+103B` |
 | `N` | `ႊ` | `U+108A` |
 | `M` | `ႃ` | `U+1083` |
-| `,` | `“` | `U+201C` |
-| `.` | `’` | `U+2019` |
-| `/` | `!` | `U+0021` |
-| `` ` `` | `~` | `U+007E` |
-| `-` | `_` | `U+005F` |
-| `=` | `+` | `U+002B` |
-| `[` | `[` | `U+005B` |
-| `]` | `]` | `U+005D` |
-| `\` | `|` | `U+007C` |
-
-## Layer 3 - AltGr / Right Alt
-
-| Key | Output | Unicode |
-| --- | --- | --- |
-| `1` | `ꧡ` | `U+A9E1` |
-| `2` | `ꧢ` | `U+A9E2` |
-| `3` | `ꧤ` | `U+A9E4` |
-| `4` | `ၹ` | `U+1079` |
-| `5` | `ႀ` | `U+1080` |
-| `6` | `ꩦ` | `U+AA66` |
-| `7` | `ꩧ` | `U+AA67` |
-| `8` | `ꩨ` | `U+AA68` |
-| `9` | `ꩩ` | `U+AA69` |
-| `0` | `ံ` | `U+1036` |
-| `Q` | `—` | `U+2014` |
-| `W` | `…` | `U+2026` |
-| `E` | `“` | `U+201C` |
-| `R` | `”` | `U+201D` |
-| `T` | `‘` | `U+2018` |
-| `Y` | `’` | `U+2019` |
-
-All remaining AltGr positions are reserved for future TMK Keyboard expansion and are intentionally unmapped.
+| `,` | `၊` | `U+104A` |
+| `.` | `။` | `U+104B` |
+| `/` | `?` | `U+003F` |

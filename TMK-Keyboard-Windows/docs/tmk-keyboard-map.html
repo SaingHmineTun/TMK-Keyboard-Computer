@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TMK Keyboard - Shan Mapping</title>
+  <style>
+    @font-face {
+      font-family: "TMK Shan";
+      src: url("./fonts/shan_regular.ttf") format("truetype");
+      font-style: normal;
+      font-weight: 400;
+      font-display: block;
+    }
+
+    :root {
+      --bg: #f4f1eb;
+      --case: #23272b;
+      --key: #343a40;
+      --key2: #2d3338;
+      --edge: #111418;
+      --normal: #fffaf0;
+      --shift: #9fe7ff;
+      --latin: #bbc4cc;
+      --accent: #ffc857;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #141414;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    .page {
+      width: 1800px;
+      height: 1120px;
+      padding: 58px 64px;
+      background:
+        radial-gradient(circle at 30% 0%, rgba(255, 200, 87, 0.2), transparent 28%),
+        linear-gradient(180deg, #faf7f0, #eee8dc);
+    }
+
+    header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 34px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 54px;
+      letter-spacing: 0;
+      color: #151719;
+    }
+
+    .legend {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-size: 24px;
+      font-weight: 700;
+      color: #252a2e;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot.normal {
+      background: var(--normal);
+      border: 2px solid #b9afa0;
+    }
+
+    .dot.shift {
+      background: var(--shift);
+      border: 2px solid #4099bd;
+    }
+
+    .keyboard {
+      padding: 46px 42px 52px;
+      background: linear-gradient(180deg, #2b3035, var(--case));
+      border: 8px solid #15191d;
+      border-radius: 38px;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.28), inset 0 2px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    .row {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 14px;
+      align-items: stretch;
+    }
+
+    .row:last-child {
+      margin-bottom: 0;
+    }
+
+    .key {
+      position: relative;
+      width: 112px;
+      height: 112px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #414850, var(--key2));
+      border: 3px solid var(--edge);
+      box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.12), 0 7px 0 #171b1f;
+      color: var(--normal);
+      font-family: "TMK Shan", "Noto Sans Myanmar", "Myanmar MN", "Myanmar Sangam MN", Arial, sans-serif;
+    }
+
+    .key.wide {
+      width: 156px;
+    }
+
+    .key.tab {
+      width: 142px;
+    }
+
+    .key.caps {
+      width: 174px;
+    }
+
+    .key.shift-left {
+      width: 220px;
+    }
+
+    .key.shift-right {
+      width: 200px;
+    }
+
+    .key.space {
+      width: 642px;
+    }
+
+    .key.empty {
+      color: #d9dde1;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    .latin {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      color: var(--latin);
+      font-family: Inter, Arial, sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .shift {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      color: var(--shift);
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .normal {
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      top: 43px;
+      color: var(--normal);
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .key.wide .normal,
+    .key.tab .normal,
+    .key.caps .normal,
+    .key.shift-left .normal,
+    .key.shift-right .normal,
+    .key.space .normal {
+      font-family: Inter, Arial, sans-serif;
+      color: #d7dee5;
+      font-size: 25px;
+      top: 44px;
+    }
+
+    .note {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #353535;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .brand {
+      color: #6c4b00;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>TMK Keyboard - Shan Mapping</h1>
+      <div class="legend">
+        <span><i class="dot normal"></i>Large center = Normal</span>
+        <span><i class="dot shift"></i>Upper right = Shift</span>
+      </div>
+    </header>
+
+    <section class="keyboard" aria-label="TMK Keyboard Shan key map">
+      <div class="row">
+        <div class="key"><span class="latin">`</span><span class="shift">~</span><span class="normal">`</span></div>
+        <div class="key"><span class="latin">1</span><span class="shift">႑</span><span class="normal">1</span></div>
+        <div class="key"><span class="latin">2</span><span class="shift">႒</span><span class="normal">2</span></div>
+        <div class="key"><span class="latin">3</span><span class="shift">႓</span><span class="normal">3</span></div>
+        <div class="key"><span class="latin">4</span><span class="shift">႔</span><span class="normal">4</span></div>
+        <div class="key"><span class="latin">5</span><span class="shift">႕</span><span class="normal">5</span></div>
+        <div class="key"><span class="latin">6</span><span class="shift">႖</span><span class="normal">6</span></div>
+        <div class="key"><span class="latin">7</span><span class="shift">႗</span><span class="normal">7</span></div>
+        <div class="key"><span class="latin">8</span><span class="shift">႘</span><span class="normal">8</span></div>
+        <div class="key"><span class="latin">9</span><span class="shift">႙</span><span class="normal">9</span></div>
+        <div class="key"><span class="latin">0</span><span class="shift">႐</span><span class="normal">0</span></div>
+        <div class="key"><span class="latin">-</span><span class="shift">_</span><span class="normal">-</span></div>
+        <div class="key"><span class="latin">=</span><span class="shift">+</span><span class="normal">=</span></div>
+        <div class="key wide empty"><span class="normal">Backspace</span></div>
+      </div>
+
+      <div class="row">
+        <div class="key tab empty"><span class="normal">Tab</span></div>
+        <div class="key"><span class="latin">Q</span><span class="shift">ꩡ</span><span class="normal">ၸ</span></div>
+        <div class="key"><span class="latin">W</span><span class="shift">ၻ</span><span class="normal">တ</span></div>
+        <div class="key"><span class="latin">E</span><span class="shift">ꧣ</span><span class="normal">ၼ</span></div>
+        <div class="key"><span class="latin">R</span><span class="shift">႞</span><span class="normal">မ</span></div>
+        <div class="key"><span class="latin">T</span><span class="shift">ြ</span><span class="normal">ဢ</span></div>
+        <div class="key"><span class="latin">Y</span><span class="shift">ၿ</span><span class="normal">ပ</span></div>
+        <div class="key"><span class="latin">U</span><span class="shift">ၷ</span><span class="normal">ၵ</span></div>
+        <div class="key"><span class="latin">I</span><span class="shift">ရ</span><span class="normal">င</span></div>
+        <div class="key"><span class="latin">O</span><span class="shift">သ</span><span class="normal">ဝ</span></div>
+        <div class="key"><span class="latin">P</span><span class="shift">ႀ</span><span class="normal">ႁ</span></div>
+        <div class="key"><span class="latin">[</span><span class="shift">ꧢ</span><span class="normal">ꧡ</span></div>
+        <div class="key"><span class="latin">]</span><span class="shift">ꩨ</span><span class="normal">ꩦ</span></div>
+        <div class="key"><span class="latin">\</span><span class="shift">ꩩ</span><span class="normal">ꩧ</span></div>
+      </div>
+
+      <div class="row">
+        <div class="key caps empty"><span class="normal">Caps Lock</span></div>
+        <div class="key"><span class="latin">A</span><span class="shift">ဵ</span><span class="normal">ေ</span></div>
+        <div class="key"><span class="latin">S</span><span class="shift">ႅ</span><span class="normal">ႄ</span></div>
+        <div class="key"><span class="latin">D</span><span class="shift">ီ</span><span class="normal">ိ</span></div>
+        <div class="key"><span class="latin">F</span><span class="shift">ႂ်</span><span class="normal">်</span></div>
+        <div class="key"><span class="latin">G</span><span class="shift">ႂ</span><span class="normal">ွ</span></div>
+        <div class="key"><span class="latin">H</span><span class="shift">ံ</span><span class="normal">ႉ</span></div>
+        <div class="key"><span class="latin">J</span><span class="shift">ႆ</span><span class="normal">ႇ</span></div>
+        <div class="key"><span class="latin">K</span><span class="shift">ို</span><span class="normal">ု</span></div>
+        <div class="key"><span class="latin">L</span><span class="shift">ိူ</span><span class="normal">ူ</span></div>
+        <div class="key"><span class="latin">;</span><span class="shift">း</span><span class="normal">ႈ</span></div>
+        <div class="key"><span class="latin">'</span><span class="shift">႟</span><span class="normal">ꧦ</span></div>
+        <div class="key wide empty"><span class="normal">Enter</span></div>
+      </div>
+
+      <div class="row">
+        <div class="key shift-left empty"><span class="normal">Shift</span></div>
+        <div class="key"><span class="latin">Z</span><span class="shift">ၾ</span><span class="normal">ၽ</span></div>
+        <div class="key"><span class="latin">X</span><span class="shift">ꩪ</span><span class="normal">ထ</span></div>
+        <div class="key"><span class="latin">C</span><span class="shift">ꧠ</span><span class="normal">ၶ</span></div>
+        <div class="key"><span class="latin">V</span><span class="shift">ꩮ</span><span class="normal">လ</span></div>
+        <div class="key"><span class="latin">B</span><span class="shift">ျ</span><span class="normal">ယ</span></div>
+        <div class="key"><span class="latin">N</span><span class="shift">ႊ</span><span class="normal">ၺ</span></div>
+        <div class="key"><span class="latin">M</span><span class="shift">ႃ</span><span class="normal">ၢ</span></div>
+        <div class="key"><span class="latin">,</span><span class="shift">၊</span><span class="normal">,</span></div>
+        <div class="key"><span class="latin">.</span><span class="shift">။</span><span class="normal">.</span></div>
+        <div class="key"><span class="latin">/</span><span class="shift">?</span><span class="normal">/</span></div>
+        <div class="key shift-right empty"><span class="normal">Shift</span></div>
+      </div>
+
+      <div class="row">
+        <div class="key wide empty"><span class="normal">Ctrl</span></div>
+        <div class="key wide empty"><span class="normal">Win</span></div>
+        <div class="key wide empty"><span class="normal">Alt</span></div>
+        <div class="key space empty"><span class="normal">Space</span></div>
+        <div class="key wide empty"><span class="normal">Alt</span></div>
+        <div class="key wide empty"><span class="normal">Win</span></div>
+        <div class="key wide empty"><span class="normal">Ctrl</span></div>
+      </div>
+    </section>
+
+    <div class="note">
+      <span class="brand">TMK Keyboard for Shan Unicode</span>
+      <span>Two layers only: Normal + Shift</span>
+    </div>
+  </main>
+</body>
+</html>

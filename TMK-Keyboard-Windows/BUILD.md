@@ -45,15 +45,16 @@ MKLC normally creates architecture-specific keyboard DLLs, MSI files, and a `set
 - `installer/setup.exe` exists.
 - Installer includes uninstall support.
 - Installed keyboard display name is **TMK Keyboard**.
-- Normal, Shift, and AltGr layers match `docs/key-mapping.md`.
-- AltGr unmapped positions produce no character.
+- Normal and Shift layers match `docs/key-mapping.md`.
 
 ## Important MKLC Check
 
-Shift+F outputs the two-codepoint sequence `U+1082 U+103A` (`ႂ်`) through the `.klc` ligature table. If MKLC reports a ligature import warning, open the Shift+F key in MKLC and configure the ligature manually as:
+Shift+F, Shift+K, and Shift+L output two-codepoint sequences through the `.klc` ligature table. If MKLC reports a ligature import warning, open those keys in MKLC and configure the ligatures manually as:
 
 ```text
-1082 103A
+Shift+F: 1082 103A
+Shift+K: 102D 102F
+Shift+L: 102D 1030
 ```
 
 Then rebuild the DLL and setup package.
