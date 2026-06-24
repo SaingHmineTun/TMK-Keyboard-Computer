@@ -15,6 +15,10 @@ The shared TMK mapping currently has two typing layers:
 - Normal
 - Shift
 
+## Keyboard Preview
+
+![TMK keyboard preview](TMK-Keyboard-Windows/docs/tmk-keyboard-map.png)
+
 Platform sources live at:
 
 - [TMK Keyboard.klc](TMK-Keyboard-Windows/TMK%20Keyboard.klc)
