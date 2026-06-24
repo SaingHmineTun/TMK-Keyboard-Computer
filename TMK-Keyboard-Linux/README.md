@@ -79,9 +79,10 @@ Restart the desktop session after editing XKB rules.
 - `m17n/shn-tmk.mim` - exact IBus m17n input method.
 - `xkb/symbols/tmk` - native XKB symbols layout with documented sequence limitations.
 - `docs/key-mapping.md` - Normal and Shift key mapping.
+- `docs/tmk-keyboard-map.png` - visual keyboard map.
 
 ## Notes
 
 - The layout assumes a US/QWERTY physical keyboard.
-- The m17n input method maps shifted punctuation from a US base layout, for example `!` for Shift+1 and `{` for Shift+Left Bracket.
+- The m17n input method maps shifted punctuation from a US base layout, for example `!` for Shift+1, `_` for Shift+Minus, `+` for Shift+Equal, and `{` for Shift+Left Bracket.
 - The layout emits Unicode Shan/Myanmar characters directly.

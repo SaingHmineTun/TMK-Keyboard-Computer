@@ -91,75 +91,96 @@
     <text class="legend" x="678" y="23">Normal output appears at the bottom</text>
   </g>
   
-    <g class="key" transform="translate(360, 340)">
+    <g class="key" transform="translate(110, 340)">
+      <rect class="key-body" width="142" height="132" rx="14"/>
+      <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
+      <text class="key-label" x="18" y="34">`</text>
+      <text class="shift-output" x="71" y="52" font-size="50">ꧤ</text>
+      <text class="normal-output" x="71" y="112" font-size="50">ၹ</text>
+    </g>
+    <g class="key" transform="translate(268, 340)">
       <rect class="key-body" width="142" height="132" rx="14"/>
       <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
       <text class="key-label" x="18" y="34">1</text>
       <text class="shift-output" x="71" y="52" font-size="50">႑</text>
       <text class="normal-output" x="71" y="112" font-size="50">1</text>
     </g>
-    <g class="key" transform="translate(518, 340)">
+    <g class="key" transform="translate(426, 340)">
       <rect class="key-body" width="142" height="132" rx="14"/>
       <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
       <text class="key-label" x="18" y="34">2</text>
       <text class="shift-output" x="71" y="52" font-size="50">႒</text>
       <text class="normal-output" x="71" y="112" font-size="50">2</text>
     </g>
-    <g class="key" transform="translate(676, 340)">
+    <g class="key" transform="translate(584, 340)">
       <rect class="key-body" width="142" height="132" rx="14"/>
       <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
       <text class="key-label" x="18" y="34">3</text>
       <text class="shift-output" x="71" y="52" font-size="50">႓</text>
       <text class="normal-output" x="71" y="112" font-size="50">3</text>
     </g>
-    <g class="key" transform="translate(834, 340)">
+    <g class="key" transform="translate(742, 340)">
       <rect class="key-body" width="142" height="132" rx="14"/>
       <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
       <text class="key-label" x="18" y="34">4</text>
       <text class="shift-output" x="71" y="52" font-size="50">႔</text>
       <text class="normal-output" x="71" y="112" font-size="50">4</text>
     </g>
-    <g class="key" transform="translate(992, 340)">
+    <g class="key" transform="translate(900, 340)">
       <rect class="key-body" width="142" height="132" rx="14"/>
       <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
       <text class="key-label" x="18" y="34">5</text>
       <text class="shift-output" x="71" y="52" font-size="50">႕</text>
       <text class="normal-output" x="71" y="112" font-size="50">5</text>
     </g>
-    <g class="key" transform="translate(1150, 340)">
+    <g class="key" transform="translate(1058, 340)">
       <rect class="key-body" width="142" height="132" rx="14"/>
       <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
       <text class="key-label" x="18" y="34">6</text>
       <text class="shift-output" x="71" y="52" font-size="50">႖</text>
       <text class="normal-output" x="71" y="112" font-size="50">6</text>
     </g>
-    <g class="key" transform="translate(1308, 340)">
+    <g class="key" transform="translate(1216, 340)">
       <rect class="key-body" width="142" height="132" rx="14"/>
       <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
       <text class="key-label" x="18" y="34">7</text>
       <text class="shift-output" x="71" y="52" font-size="50">႗</text>
       <text class="normal-output" x="71" y="112" font-size="50">7</text>
     </g>
-    <g class="key" transform="translate(1466, 340)">
+    <g class="key" transform="translate(1374, 340)">
       <rect class="key-body" width="142" height="132" rx="14"/>
       <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
       <text class="key-label" x="18" y="34">8</text>
       <text class="shift-output" x="71" y="52" font-size="50">႘</text>
       <text class="normal-output" x="71" y="112" font-size="50">8</text>
     </g>
-    <g class="key" transform="translate(1624, 340)">
+    <g class="key" transform="translate(1532, 340)">
       <rect class="key-body" width="142" height="132" rx="14"/>
       <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
       <text class="key-label" x="18" y="34">9</text>
       <text class="shift-output" x="71" y="52" font-size="50">႙</text>
       <text class="normal-output" x="71" y="112" font-size="50">9</text>
     </g>
-    <g class="key" transform="translate(1782, 340)">
+    <g class="key" transform="translate(1690, 340)">
       <rect class="key-body" width="142" height="132" rx="14"/>
       <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
       <text class="key-label" x="18" y="34">0</text>
       <text class="shift-output" x="71" y="52" font-size="50">႐</text>
       <text class="normal-output" x="71" y="112" font-size="50">0</text>
+    </g>
+    <g class="key" transform="translate(1848, 340)">
+      <rect class="key-body" width="142" height="132" rx="14"/>
+      <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
+      <text class="key-label" x="18" y="34">-</text>
+      <text class="shift-output" x="71" y="52" font-size="50">(</text>
+      <text class="normal-output" x="71" y="112" font-size="50">-</text>
+    </g>
+    <g class="key" transform="translate(2006, 340)">
+      <rect class="key-body" width="142" height="132" rx="14"/>
+      <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
+      <text class="key-label" x="18" y="34">=</text>
+      <text class="shift-output" x="71" y="52" font-size="50">)</text>
+      <text class="normal-output" x="71" y="112" font-size="50">+</text>
     </g>
     <g class="key" transform="translate(120, 494)">
       <rect class="key-body" width="142" height="132" rx="14"/>
@@ -327,7 +348,7 @@
       <line class="divider" x1="18" y1="66" x2="124" y2="66"/>
       <text class="key-label" x="18" y="34">'</text>
       <text class="shift-output" x="71" y="52" font-size="50">႟</text>
-      <text class="normal-output" x="71" y="112" font-size="50">ꧦ</text>
+      <text class="normal-output" x="71" y="112" font-size="50">”</text>
     </g>
     <g class="key" transform="translate(280, 802)">
       <rect class="key-body" width="142" height="132" rx="14"/>

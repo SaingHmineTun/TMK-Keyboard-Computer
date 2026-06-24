@@ -41,7 +41,7 @@ The m17n input method supports every output below. The XKB layout can emit only 
 | `K` | `ု` | `U+102F` |
 | `L` | `ူ` | `U+1030` |
 | `;` | `ႈ` | `U+1088` |
-| `'` | `ꧦ` | `U+A9E6` |
+| `'` | `”` | `U+201D` |
 | `Z` | `ၽ` | `U+107D` |
 | `X` | `ထ` | `U+1011` |
 | `C` | `ၶ` | `U+1076` |
@@ -52,9 +52,9 @@ The m17n input method supports every output below. The XKB layout can emit only 
 | `.` | `.` | `U+002E` |
 | `,` | `,` | `U+002C` |
 | `/` | `/` | `U+002F` |
-| `` ` `` | `` ` `` | `U+0060` |
+| `` ` `` | `ၹ` | `U+1079` |
 | `-` | `-` | `U+002D` |
-| `=` | `=` | `U+003D` |
+| `=` | `+` | `U+002B` |
 
 ## Layer 2 - Shift
 
@@ -104,6 +104,6 @@ The m17n input method supports every output below. The XKB layout can emit only 
 | `.` | `။` | `U+104B` |
 | `,` | `၊` | `U+104A` |
 | `/` | `?` | `U+003F` |
-| `` ` `` | `~` | `U+007E` |
-| `-` | `_` | `U+005F` |
-| `=` | `+` | `U+002B` |
+| `` ` `` | `ꧤ` | `U+A9E4` |
+| `-` | `(` | `U+0028` |
+| `=` | `)` | `U+0029` |

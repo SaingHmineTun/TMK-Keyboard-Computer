@@ -39,7 +39,7 @@ This document is the source-of-truth mapping for `TMK Keyboard.bundle`.
 | `K` | `ု` | `U+102F` |
 | `L` | `ူ` | `U+1030` |
 | `;` | `ႈ` | `U+1088` |
-| `'` | `ꧦ` | `U+A9E6` |
+| `'` | `”` | `U+201D` |
 | `Z` | `ၽ` | `U+107D` |
 | `X` | `ထ` | `U+1011` |
 | `C` | `ၶ` | `U+1076` |
@@ -50,6 +50,9 @@ This document is the source-of-truth mapping for `TMK Keyboard.bundle`.
 | `,` | `,` | `U+002C` |
 | `.` | `.` | `U+002E` |
 | `/` | `/` | `U+002F` |
+| `` ` `` | `ၹ` | `U+1079` |
+| `-` | `-` | `U+002D` |
+| `=` | `+` | `U+002B` |
 
 ## Shift
 
@@ -99,3 +102,6 @@ This document is the source-of-truth mapping for `TMK Keyboard.bundle`.
 | `,` | `၊` | `U+104A` |
 | `.` | `။` | `U+104B` |
 | `/` | `?` | `U+003F` |
+| `` ` `` | `ꧤ` | `U+A9E4` |
+| `-` | `(` | `U+0028` |
+| `=` | `)` | `U+0029` |

@@ -7,6 +7,7 @@ const outFile = path.join(assetsDir, "tmk-keyboard-mapping.svg");
 
 const rows = [
   [
+    ["`", "ၹ", "ꧤ"],
     ["1", "1", "႑"],
     ["2", "2", "႒"],
     ["3", "3", "႓"],
@@ -17,6 +18,8 @@ const rows = [
     ["8", "8", "႘"],
     ["9", "9", "႙"],
     ["0", "0", "႐"],
+    ["-", "-", "("],
+    ["=", "+", ")"],
   ],
   [
     ["Q", "ၸ", "ꩡ"],
@@ -74,7 +77,7 @@ const keyH = 132;
 const gap = 16;
 const startY = 340;
 const rowGap = 22;
-const rowOffsets = [360, 120, 200, 280];
+const rowOffsets = [110, 120, 200, 280];
 
 function textSize(value) {
   return Array.from(value).length > 1 ? 40 : 50;
