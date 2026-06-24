@@ -1,0 +1,70 @@
+// TMK Keyboard native XKB symbols layout for Shan Unicode.
+//
+// Plain XKB can emit only one keysym per key press. For exact TMK output,
+// including Shift+F, Shift+K, and Shift+L two-codepoint sequences, use the
+// ibus-m17n input method at ../../m17n/shn-tmk.mim.
+
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "us(basic)"
+
+    name[Group1] = "Shan (TMK Keyboard)";
+
+    key <AE01> { [ 1, U1091 ] };
+    key <AE02> { [ 2, U1092 ] };
+    key <AE03> { [ 3, U1093 ] };
+    key <AE04> { [ 4, U1094 ] };
+    key <AE05> { [ 5, U1095 ] };
+    key <AE06> { [ 6, U1096 ] };
+    key <AE07> { [ 7, U1097 ] };
+    key <AE08> { [ 8, U1098 ] };
+    key <AE09> { [ 9, U1099 ] };
+    key <AE10> { [ 0, U1090 ] };
+    key <AE11> { [ minus, underscore ] };
+    key <AE12> { [ equal, plus ] };
+
+    key <AD01> { [ U1078, UAA61 ] };
+    key <AD02> { [ U1010, U107B ] };
+    key <AD03> { [ U107C, UA9E3 ] };
+    key <AD04> { [ U1019, U109E ] };
+    key <AD05> { [ U1022, U103C ] };
+    key <AD06> { [ U1015, U107F ] };
+    key <AD07> { [ U1075, U1077 ] };
+    key <AD08> { [ U1004, U101B ] };
+    key <AD09> { [ U101D, U101E ] };
+    key <AD10> { [ U1081, U1080 ] };
+    key <AD11> { [ UA9E1, UA9E2 ] };
+    key <AD12> { [ UAA66, UAA68 ] };
+    key <BKSL> { [ UAA67, UAA69 ] };
+
+    key <AC01> { [ U1031, U1035 ] };
+    key <AC02> { [ U1084, U1085 ] };
+    key <AC03> { [ U102D, U102E ] };
+
+    // XKB fallback for exact m17n output U1082 U103A.
+    key <AC04> { [ U103A, U1082 ] };
+
+    key <AC05> { [ U103D, U1082 ] };
+    key <AC06> { [ U1089, U1036 ] };
+    key <AC07> { [ U1087, U1086 ] };
+
+    // XKB fallbacks for exact m17n outputs U102D U102F and U102D U1030.
+    key <AC08> { [ U102F, U102D ] };
+    key <AC09> { [ U1030, U102D ] };
+
+    key <AC10> { [ U1088, U1038 ] };
+    key <AC11> { [ UA9E6, U109F ] };
+
+    key <AB01> { [ U107D, U107E ] };
+    key <AB02> { [ U1011, UAA6A ] };
+    key <AB03> { [ U1076, UA9E0 ] };
+    key <AB04> { [ U101C, UAA6E ] };
+    key <AB05> { [ U101A, U103B ] };
+    key <AB06> { [ U107A, U108A ] };
+    key <AB07> { [ U1062, U1083 ] };
+    key <AB08> { [ comma, U104A ] };
+    key <AB09> { [ period, U104B ] };
+    key <AB10> { [ slash, question ] };
+
+    key <TLDE> { [ grave, asciitilde ] };
+};
