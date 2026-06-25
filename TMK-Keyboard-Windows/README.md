@@ -12,8 +12,8 @@ After installation, the layout appears as **TMK Keyboard** in Windows language a
 - `docs/tmk-keyboard-map.png` - visual keyboard map.
 - `docs/tmk-keyboard-map.html` - source used to render the keyboard map.
 - `docs/fonts/shan_regular.ttf` - Shan font used for the keyboard map artwork.
-- `installer/setup.exe` - ready-to-run Windows installer.
-- `installer/uninstall.exe` - Windows uninstaller.
+- `installer/setup.exe` - ready-to-run Windows installer with responsive progress UI.
+- `installer/uninstall.exe` - Windows uninstaller with the same branded UI.
 - `installer/build_installer.ps1` - repeatable compiler and installer build.
 
 ## Layout
