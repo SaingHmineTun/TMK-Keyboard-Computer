@@ -1,6 +1,6 @@
 # Installer Package
 
-Run `setup.exe` and approve the Windows administrator prompt. Use `uninstall.exe` to remove the keyboard.
+Run `setup.exe` and approve the Windows administrator prompt. The branded installer remains responsive and shows progress while Windows is updated. Use `uninstall.exe` to remove the keyboard through the same interface.
 
 The installer:
 

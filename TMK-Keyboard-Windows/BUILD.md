@@ -31,10 +31,10 @@ If WiX 3.14 portable binaries are available in `tools/wix314`, the script also b
 1. Run `installer/setup.exe`.
 2. Restart Windows or sign out and sign back in if Windows does not immediately show the layout.
 3. Open `Settings > Time & language > Language & region`.
-4. Add or open the Myanmar language entry if needed.
-5. Confirm **TMK Keyboard** appears as an installed keyboard.
+4. Open the English language options.
+5. Confirm **Shan (TMK)** appears as an installed keyboard.
 6. Press `Win + Space`.
-7. Select **TMK Keyboard**.
+7. Select **English - Shan (TMK)**.
 8. Test typing in:
    - Notepad
    - Microsoft Word
@@ -46,7 +46,7 @@ If WiX 3.14 portable binaries are available in `tools/wix314`, the script also b
 - `installer/setup.exe` exists.
 - `installer/uninstall.exe` exists.
 - Installer includes uninstall support.
-- Installed keyboard display name is **TMK Keyboard**.
+- Installed keyboard display name is **Shan (TMK)**.
 - Normal and Shift layers match `docs/key-mapping.md`.
 
 ## Important MKLC Check

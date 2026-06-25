@@ -67,6 +67,54 @@ try {
     $env:LIB = $oldLib
 }
 
+$cscCandidates = @(
+    (Join-Path $env:WINDIR 'Microsoft.NET\Framework64\v4.0.30319\csc.exe'),
+    (Join-Path $env:WINDIR 'Microsoft.NET\Framework\v4.0.30319\csc.exe')
+)
+$csc = $cscCandidates | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
+if (-not $csc) {
+    throw 'The Windows .NET Framework C# compiler was not found.'
+}
+
+$guiSource = Join-Path $PSScriptRoot 'InstallerGui.cs'
+$guiManifest = Join-Path $PSScriptRoot 'InstallerGui.manifest'
+$guiIcon = Join-Path $PSScriptRoot 'assets\tmk-keyboard-icon.ico'
+$guiImage = Join-Path $PSScriptRoot 'assets\tmk-keyboard-icon.png'
+
+function Build-GuiExecutable {
+    param(
+        [string]$Target,
+        [string]$Define,
+        [string[]]$Resources
+    )
+
+    $arguments = @(
+        '/nologo',
+        '/target:winexe',
+        '/platform:anycpu',
+        '/optimize+',
+        '/reference:System.dll',
+        '/reference:System.Drawing.dll',
+        '/reference:System.Windows.Forms.dll',
+        "/win32icon:$guiIcon",
+        "/win32manifest:$guiManifest"
+    )
+    if ($Define) {
+        $arguments += "/define:$Define"
+    }
+    foreach ($resource in $Resources) {
+        $arguments += "/resource:$resource"
+    }
+    $arguments += "/out:$Target"
+    $arguments += $guiSource
+
+    Remove-Item -LiteralPath $Target -Force -ErrorAction SilentlyContinue
+    & $csc @arguments
+    if ($LASTEXITCODE -ne 0 -or -not (Test-Path -LiteralPath $Target)) {
+        throw "The responsive installer GUI failed to compile: $Target"
+    }
+}
+
 $candle = Join-Path $WixRoot 'candle.exe'
 $light = Join-Path $WixRoot 'light.exe'
 if ((Test-Path -LiteralPath $candle) -and (Test-Path -LiteralPath $light)) {
@@ -83,95 +131,25 @@ if ((Test-Path -LiteralPath $candle) -and (Test-Path -LiteralPath $light)) {
     }
 }
 
-$iexpress = Join-Path $env:WINDIR 'System32\iexpress.exe'
-
-function New-IExpressPackage {
-    param(
-        [string]$Name,
-        [string]$Target,
-        [string]$Command,
-        [string]$FinishMessage,
-        [hashtable]$Files
+$setupExe = Join-Path $PSScriptRoot 'setup.exe'
+Build-GuiExecutable `
+    -Target $setupExe `
+    -Resources @(
+        "$guiImage,TMK.Icon",
+        "$(Join-Path $PSScriptRoot 'install.ps1'),TMK.InstallScript",
+        "$(Join-Path $output 'amd64\TMKSHAN.dll'),TMK.NativeAmd64",
+        "$(Join-Path $output 'i386\TMKSHAN.dll'),TMK.NativeI386",
+        "$(Join-Path $output 'wow64\TMKSHAN.dll'),TMK.Wow64"
     )
 
-    $stage = Join-Path $PSScriptRoot "$Name-payload"
-    $sed = Join-Path $PSScriptRoot "$Name.sed"
-    New-Item -ItemType Directory -Force -Path $stage | Out-Null
-
-    $index = 0
-    $sourceEntries = New-Object System.Collections.Generic.List[string]
-    $stringEntries = New-Object System.Collections.Generic.List[string]
-    foreach ($destinationName in ($Files.Keys | Sort-Object)) {
-        Copy-Item -LiteralPath $Files[$destinationName] -Destination (Join-Path $stage $destinationName) -Force
-        $sourceEntries.Add("%FILE$index%=")
-        $stringEntries.Add("FILE$index=$destinationName")
-        $index++
-    }
-
-    $sedContent = @"
-[Version]
-Class=IEXPRESS
-SEDVersion=3
-[Options]
-PackagePurpose=InstallApp
-ShowInstallProgramWindow=1
-HideExtractAnimation=0
-UseLongFileName=1
-InsideCompressed=0
-CAB_FixedSize=0
-CAB_ResvCodeSigning=0
-RebootMode=N
-InstallPrompt=
-DisplayLicense=
-FinishMessage=$FinishMessage
-TargetName=$Target
-FriendlyName=TMK Keyboard $Name
-AppLaunched=$Command
-PostInstallCmd=<None>
-AdminQuietInstCmd=$Command
-UserQuietInstCmd=$Command
-SourceFiles=SourceFiles
-[SourceFiles]
-SourceFiles0=$stage\
-[SourceFiles0]
-$($sourceEntries -join "`r`n")
-[Strings]
-$($stringEntries -join "`r`n")
-"@
-    Set-Content -LiteralPath $sed -Value $sedContent -Encoding ASCII
-    Remove-Item -LiteralPath $Target -Force -ErrorAction SilentlyContinue
-    $iexpressProcess = Start-Process -FilePath $iexpress -ArgumentList @('/N', '/Q', $sed) -Wait -PassThru
-    if ($iexpressProcess.ExitCode -ne 0 -or -not (Test-Path -LiteralPath $Target)) {
-        throw "IExpress $Name build failed."
-    }
-    Remove-Item -LiteralPath $stage -Recurse -Force
-    Remove-Item -LiteralPath $sed -Force
-}
-
-$setupExe = Join-Path $PSScriptRoot 'setup.exe'
-New-IExpressPackage `
-    -Name 'Setup' `
-    -Target $setupExe `
-    -Command 'setup.cmd' `
-    -FinishMessage 'TMK Keyboard installation completed.' `
-    -Files @{
-        'install.ps1' = (Join-Path $PSScriptRoot 'install.ps1')
-        'setup.cmd' = (Join-Path $PSScriptRoot 'setup.cmd')
-        'TMKSHAN-amd64.dll' = (Join-Path $output 'amd64\TMKSHAN.dll')
-        'TMKSHAN-i386.dll' = (Join-Path $output 'i386\TMKSHAN.dll')
-        'TMKSHAN-wow64.dll' = (Join-Path $output 'wow64\TMKSHAN.dll')
-    }
-
 $uninstallExe = Join-Path $PSScriptRoot 'uninstall.exe'
-New-IExpressPackage `
-    -Name 'Uninstall' `
+Build-GuiExecutable `
     -Target $uninstallExe `
-    -Command 'uninstall.cmd' `
-    -FinishMessage 'TMK Keyboard uninstall completed.' `
-    -Files @{
-        'uninstall.cmd' = (Join-Path $PSScriptRoot 'uninstall.cmd')
-        'uninstall.ps1' = (Join-Path $PSScriptRoot 'uninstall.ps1')
-    }
+    -Define 'UNINSTALLER' `
+    -Resources @(
+        "$guiImage,TMK.Icon",
+        "$(Join-Path $PSScriptRoot 'uninstall.ps1'),TMK.UninstallScript"
+    )
 
 Write-Host "Keyboard binaries built in $output"
 Write-Host "Setup executable built at $setupExe"
