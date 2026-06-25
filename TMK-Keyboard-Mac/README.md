@@ -7,6 +7,8 @@ This is a standalone macOS keyboard layout project for typing Shan Unicode text.
 - `TMK Keyboard.bundle` - macOS keyboard layout bundle.
 - `Install TMK Keyboard.command` - double-click installer for the current Mac user.
 - `installer/TMK Keyboard Installer.pkg` - macOS installer package for all users.
+- `installer/TMK Keyboard Installer.zip` - shareable zip that preserves the package icon metadata.
+- `installer/resources/tmk-keyboard-installer.png` - branded installer icon artwork.
 - `docs/key-mapping.md` - Normal and Shift mapping used by the bundle.
 - `assets/tmk-keyboard-mapping.html` - Browser-rendered keyboard mapping artwork source.
 - `assets/tmk-keyboard-mapping.png` - Shareable keyboard mapping image.
@@ -89,6 +91,8 @@ sh "TMK-Keyboard-Mac/installer/build-macos-installer.sh"
 ```
 
 The generated package is saved as `TMK-Keyboard-Mac/installer/TMK Keyboard Installer.pkg`.
+
+The script also creates `TMK-Keyboard-Mac/installer/TMK Keyboard Installer.zip` for sharing while preserving the custom package icon metadata.
 
 ## Notes
 
