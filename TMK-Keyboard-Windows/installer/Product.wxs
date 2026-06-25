@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product
+    Id="*"
+    Name="TMK Keyboard"
+    Language="1033"
+    Version="1.0.0"
+    Manufacturer="TMK Keyboard Project"
+    UpgradeCode="{675884B0-A499-4CB2-97CF-224E3E3F6452}">
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" Platform="x64" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of TMK Keyboard is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="System64Folder">
+        <Component Id="NativeKeyboardDll" Guid="{81A1EB4E-31BB-4F7A-901A-29943707EBCA}" Win64="yes">
+          <File Id="NativeDll" Source="TMK-Keyboard-1.0\amd64\TMKSHAN.dll" KeyPath="yes" />
+        </Component>
+      </Directory>
+      <Directory Id="SystemFolder">
+        <Component Id="Wow64KeyboardDll" Guid="{1C1B16A9-B90A-457A-A3B1-7365DDB67CD0}">
+          <File Id="Wow64Dll" Source="TMK-Keyboard-1.0\wow64\TMKSHAN.dll" KeyPath="yes" />
+        </Component>
+      </Directory>
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLFOLDER" Name="TMK Keyboard">
+          <Component Id="InstallerScripts" Guid="{A8B5BFE0-8929-4E22-B63F-9035F078A867}" Win64="yes">
+            <File Id="InstallScript" Source="install.ps1" />
+            <File Id="UninstallScript" Source="uninstall.ps1" />
+            <RegistryKey Root="HKLM" Key="SYSTEM\CurrentControlSet\Control\Keyboard Layouts\A0000409">
+              <RegistryValue Name="Layout File" Value="TMKSHAN.dll" Type="string" />
+              <RegistryValue Name="Layout Text" Value="Shan (TMK)" Type="string" />
+              <RegistryValue Name="Layout Display Name" Value="Shan (TMK)" Type="string" />
+              <RegistryValue Name="Layout Id" Value="0A5B" Type="string" KeyPath="yes" />
+            </RegistryKey>
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="Complete" Title="TMK Keyboard" Level="1">
+      <ComponentRef Id="NativeKeyboardDll" />
+      <ComponentRef Id="Wow64KeyboardDll" />
+      <ComponentRef Id="InstallerScripts" />
+    </Feature>
+  </Product>
+</Wix>

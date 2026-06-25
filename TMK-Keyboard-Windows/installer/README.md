@@ -1,11 +1,12 @@
 # Installer Package
 
-Place the MKLC-generated installer package in this directory after building on Windows.
+Run `setup.exe` and approve the Windows administrator prompt. Use `uninstall.exe` to remove the keyboard.
 
-Expected generated files include:
+The installer:
 
-- `setup.exe`
-- architecture-specific MSI packages
-- architecture-specific keyboard DLLs
+- copies the x64 keyboard DLL to System32;
+- copies the x86 keyboard DLL to SysWOW64;
+- registers **Shan (TMK)** as layout `A0000409`;
+- adds it to the current user's English input methods for reliable Win+Space switching.
 
-Do not hand-edit the generated files. Rebuild them from `../TMK Keyboard.klc` with Microsoft Keyboard Layout Creator whenever the mapping changes.
+Use `build_installer.ps1` from the repository root to rebuild the DLLs and setup executable.

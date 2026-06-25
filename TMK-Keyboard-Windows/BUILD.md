@@ -1,33 +1,34 @@
 # Build Instructions
 
-These steps must be performed on Windows because Microsoft Keyboard Layout Creator generates the keyboard DLLs, MSI package, and `setup.exe`.
+These steps must be performed on Windows because Microsoft Keyboard Layout Creator generates the keyboard DLLs.
 
 ## Requirements
 
 - Windows 10 or Windows 11
-- Microsoft Keyboard Layout Creator 1.4
+- Microsoft Keyboard Layout Creator 1.4 extracted to `tools/MSKLC-portable`
 - Administrator access for installation testing
 
 ## Build
 
-1. Open Microsoft Keyboard Layout Creator.
-2. Select `File > Load Source File...`.
-3. Open `TMK Keyboard.klc`.
-4. Verify the project metadata:
-   - Keyboard name: `TMKSHAN`
-   - Display name: `TMK Keyboard`
-   - Locale: `my-MM`
-   - Version: `1.0`
-5. Select `Project > Validate Layout`.
-6. Select `Project > Test Keyboard Layout...` and type sample Shan text.
-7. Select `Project > Build DLL and Setup Package`.
-8. Copy the generated output folder into `installer/`.
+From the repository root:
 
-MKLC normally creates architecture-specific keyboard DLLs, MSI files, and a `setup.exe` bootstrapper in the generated package folder.
+```powershell
+powershell -ExecutionPolicy Bypass -File .\TMK-Keyboard-Windows\installer\build_installer.ps1
+```
+
+The script compiles x86, x64, and WOW64 keyboard DLLs, then creates:
+
+- `installer/setup.exe`
+- `installer/uninstall.exe`
+- `installer/TMK-Keyboard-1.0/i386/TMKSHAN.dll`
+- `installer/TMK-Keyboard-1.0/amd64/TMKSHAN.dll`
+- `installer/TMK-Keyboard-1.0/wow64/TMKSHAN.dll`
+
+If WiX 3.14 portable binaries are available in `tools/wix314`, the script also builds `installer/TMK-Keyboard-1.0-x64.msi`.
 
 ## Install Test
 
-1. Run the generated `setup.exe`.
+1. Run `installer/setup.exe`.
 2. Restart Windows or sign out and sign back in if Windows does not immediately show the layout.
 3. Open `Settings > Time & language > Language & region`.
 4. Add or open the Myanmar language entry if needed.
@@ -43,6 +44,7 @@ MKLC normally creates architecture-specific keyboard DLLs, MSI files, and a `set
 ## Packaging Checklist
 
 - `installer/setup.exe` exists.
+- `installer/uninstall.exe` exists.
 - Installer includes uninstall support.
 - Installed keyboard display name is **TMK Keyboard**.
 - Normal and Shift layers match `docs/key-mapping.md`.
