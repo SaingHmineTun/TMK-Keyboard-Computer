@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+/usr/bin/touch "/Library/Keyboard Layouts" >/dev/null 2>&1 || true
+
+echo "TMK Keyboard installed. Sign out and sign back in, or restart the Mac before adding the input source."
+exit 0
